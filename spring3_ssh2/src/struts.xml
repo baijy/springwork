@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"/WEB-INF/classes/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="default" namespace="/" extends="struts-default">
+    	<!-- 方法1：Struts自己管理 -->
+    	<!-- 
+    	<action name="book_*" class="cn.jianyu.action.BookAction" method="{1}"></action>
+    	 -->
+    	<!-- 方法2：Spring的伪类，applicationContext里面定义的bean-->
+    	<action name="book_*" class="bookAction" method="{1}"></action>
+    </package>
+    
+</struts>
